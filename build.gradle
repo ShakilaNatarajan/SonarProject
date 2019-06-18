@@ -22,17 +22,8 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
-jacoco {
-toolVersion = "0.7.9"
-reportsDir = file("$buildDir/customJacocoReportDir")
-}
-jacocoTestReport {
-reports {
-xml.enabled false
-csv.enabled false
-html.destination file("${buildDir}/jacocoHtml")
-}
-}
+
+
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:27.0.1-jre'
