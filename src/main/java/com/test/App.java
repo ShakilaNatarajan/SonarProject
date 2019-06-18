@@ -6,10 +6,7 @@ package com.test;
 public class App {
    
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         System.out.println(new App().getGreeting())
-=======
-       
->>>>>>> f260c0271b5bef90d81f966dcbe380004b62185f
     }
 }
