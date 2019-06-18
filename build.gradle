@@ -22,7 +22,22 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
+test {
+  testLogging {
+    exceptionFormat = 'full'
+    events = ["passed", "failed", "skipped"]
+  }
+  finalizedBy jacocoTestReport
+}
 
+jacocoTestReport{
+  group = "build"
+  reports {
+    xml.enabled false
+    csv.enabled false
+    html.destination file("${buildDir}/jacocoHtml")
+  }
+}
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
