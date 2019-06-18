@@ -36,7 +36,6 @@ html.destination file("${buildDir}/jacocoHtml")
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:27.0.1-jre'
-classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2.1")
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
