@@ -11,5 +11,10 @@ pipeline {
         bat 'gradle test'
       }
     }
+    stage('Sonarqube') {
+      steps {
+        bat 'gradle clean sonarqube'
+      }
+    }
   }
 }
