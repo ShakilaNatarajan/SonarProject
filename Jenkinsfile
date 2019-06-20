@@ -35,5 +35,10 @@ pipeline {
         bat 'gradle clean sonarqube'
       }
     }
+    stage('code coverage') {
+      steps {
+        sh 'gradle jacocoTestReport'
+      }
+    }
   }
 }
