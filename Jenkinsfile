@@ -10,7 +10,10 @@ pipeline {
       parallel {
         stage('Test') {
           steps {
+            
             bat 'gradle test'
+              publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'julid/build/reports/tests', reportFiles: 'index.html', reportName: 'JUnit Test Reports'])
+        publishHTML([allowMissing: true, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'julid/build/reports/jacoco', reportFiles: 'index.html', reportName: 'JaCoCo Coverage Reports'])
           }
         }
         stage('Chrome') {
