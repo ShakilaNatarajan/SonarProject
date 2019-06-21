@@ -10,9 +10,8 @@ pipeline {
       parallel {
         stage('Test') {
           steps {
-            
             bat 'gradle test'
-  }
+          }
         }
         stage('Chrome') {
           steps {
@@ -34,11 +33,6 @@ pipeline {
     stage('Sonarqube') {
       steps {
         bat 'gradle clean sonarqube'
-      }
-    }
-    stage('code coverage') {
-      steps {
-        sh 'gradle jacocoTestReport'
       }
     }
   }
