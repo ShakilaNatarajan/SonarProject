@@ -35,13 +35,17 @@ pipeline {
         bat 'gradle clean sonarqube'
       }
     }
-  }
-  
-   post {
-        always {
-            archiveArtifacts artifacts: 'build/**/*.jar', fingerprint: true
-          
-        }
+    stage('Artifact Job') {
+      steps {
+        build 'JacocoExample'
+      }
     }
- 
+  }
+  post {
+    always {
+      archiveArtifacts(artifacts: 'build/**/*.jar', fingerprint: true)
+
+    }
+
+  }
 }
